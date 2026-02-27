@@ -25,6 +25,10 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   console.log("/api/ping POST 실행");
+
+  // json형태의 request.body parsing
+  const body = await request.json();
+  console.log(body);
   const response = NextResponse.json({
     ping: "POST-pong",
   });
